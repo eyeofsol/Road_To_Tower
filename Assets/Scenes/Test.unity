@@ -159,7 +159,7 @@ GameObject:
   - component: {fileID: 552733491}
   m_Layer: 0
   m_Name: Floor
-  m_TagString: Struc
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1132,6 +1132,13 @@ MonoBehaviour:
   warningPlanePrefab: {fileID: 2801908183515063299, guid: c71c72ff2a5f6684fab881a9ba1c7d4b, type: 3}
   spikePrefab: {fileID: 5517957459761711049, guid: 8770f89a4f2ba6045adb2f71790a5b47, type: 3}
   childMonsterPrefab: {fileID: 0}
+  AwakeSound: {fileID: 0}
+  DashSound: {fileID: 0}
+  ShootSound: {fileID: 0}
+  SpreadSound: {fileID: 0}
+  WarningSound: {fileID: 0}
+  DeathSound: {fileID: 0}
+  HP: 2000
   dashSpeed: 20
   patternCooldown: 2
   damage: 10
@@ -1140,6 +1147,9 @@ MonoBehaviour:
   warningDuration: 3
   spikeDuration: 2
   spikeCount: 8
+  damageCooldown: 1
+  _isDead: 0
+  _capsuleCollider: {fileID: 0}
 --- !u!1 &1808453240 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6737123798750313517, guid: 342656cf724769a44ba1cd495c6ac96b, type: 3}
@@ -1369,6 +1379,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SteamPunkMech1
       objectReference: {fileID: 0}
+    - target: {fileID: 6737123798750313517, guid: 342656cf724769a44ba1cd495c6ac96b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1393,7 +1407,7 @@ GameObject:
   - component: {fileID: 1945655890}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: CameraPos
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1586,6 +1600,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SteamPunkMech2
       objectReference: {fileID: 0}
+    - target: {fileID: 6737123798750313517, guid: 342656cf724769a44ba1cd495c6ac96b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1747,7 +1765,7 @@ PrefabInstance:
     - target: {fileID: 1599083660406449381, guid: ccadec5bfda40594fbcac32f4787210a, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 1945655888}
+      objectReference: {fileID: 1945655884}
     - target: {fileID: 3337381956982130175, guid: ccadec5bfda40594fbcac32f4787210a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1758,7 +1776,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3337381956982130175, guid: ccadec5bfda40594fbcac32f4787210a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -1.22
       objectReference: {fileID: 0}
     - target: {fileID: 3337381956982130175, guid: ccadec5bfda40594fbcac32f4787210a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1794,7 +1812,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5662631587569911981, guid: ccadec5bfda40594fbcac32f4787210a, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
